@@ -1,35 +1,6 @@
 ﻿# HK_QoLTeleportKit
 Описание
-QoL Teleport Kit - это мод для Hollow Knight, который добавляет удобную систему телепортации к боссам и ключевым локациям в игре. Мод особенно полезен для:
-
-Скоростных прохождений (speedruns)
-
-Тренировки против боссов
-
-Практики в Pantheon of Hallownest
-
-Прохождения Path of Pain
-
-Основные возможности
-Меню телепортации с 4 страницами локаций:
-
-Hall of Gods (1 и 2 этажи)
-
-Pantheons
-
-Path of Pain сегменты
-
-Горячие клавиши для быстрого доступа
-
-Система пользовательских точек телепортации:
-
-Сохранение текущей позиции
-
-Телепорт к сохранённой позиции
-
-Переназначаемые клавиши
-
-Подробное логирование действий
+QoL Teleport Kit - это мод для Hollow Knight, который добавляет удобную систему телепортации.
 
 Установка
 Убедитесь, что у вас установлен ModInstaller для Hollow Knight
@@ -74,47 +45,15 @@ Path of Pain сегменты
 Совместимость
 Мод тестировался на версии Hollow Knight 1.5.78.11833. Совместим с большинством других модов.
 
-Известные проблемы
-В редких случаях могут возникать визуальные артефакты при телепортации в White Palace
-
-Телепорт в некоторые локации Godhome требует промежуточной загрузки
-
 Благодарности
 Команде разработчиков Hollow Knight за потрясающую игру
 
 Сообществу моддеров HK за инструменты и поддержку
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Description
-QoL Teleport Kit is a Hollow Knight mod that adds a convenient teleportation system to bosses and key locations. The mod is especially useful for:
+QoL Teleport Kit is a Hollow Knight mod that adds a convenient teleportation system.
 
-Speedruns
 
-Boss practice
-
-Pantheon of Hallownest training
-
-Path of Pain practice
-
-Key Features
-Teleport menu with 4 location pages:
-
-Hall of Gods (Floors 1 & 2)
-
-Pantheons
-
-Path of Pain segments
-
-Hotkey support for quick access
-
-Custom waypoint system:
-
-Save current position
-
-Teleport to saved position
-
-Rebindable keys
-
-Detailed logging of actions
 
 Installation
 Ensure you have ModInstaller for Hollow Knight
@@ -158,11 +97,6 @@ Detailed logs saved to QoLTeleportKit.log
 
 Compatibility
 Tested on Hollow Knight version 1.5.78.11833. Compatible with most other mods.
-
-Known Issues
-Rare visual artifacts may occur when teleporting in White Palace
-
-Some Godhome locations require intermediate loading
 
 Credits
 Hollow Knight development team for the amazing game
