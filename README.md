@@ -94,6 +94,7 @@ Close menu - Esc
 All keys can be rebound in-game (hold Ctrl and press the desired key)
 
 Menu Pages
+
 Page 1: Hall of Gods (Floor 1)
 Teleport to bosses on Hall of Gods floor 1 (1-18)
 
