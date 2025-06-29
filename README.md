@@ -10,7 +10,6 @@ QoL Teleport Kit - это мод для Hollow Knight, который добав
 Поместите файл .dll в папку Mods игры
 
 Управление:
-Действие - Клавиша по умолчанию:
 
 1.Открыть/закрыть меню - F6
 
@@ -73,16 +72,25 @@ Download the latest version from Releases section
 Place the .dll file in the game's Mods folder
 
 Controls
-Action	Default Key
+
 Open/close menu - F6
+
 Save position - R
+
 Teleport to saved position - T
+
 Previous page - Q
+
 Next page - E
+
 Number input - 0-9
+
 Confirm teleport - Enter
+
 Clear input - Backspace
+
 Close menu - Esc
+
 All keys can be rebound in-game (hold Ctrl and press the desired key)
 
 Menu Pages
