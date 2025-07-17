@@ -1,4 +1,4 @@
-﻿using HutongGames.PlayMaker;
+using HutongGames.PlayMaker;
 using Modding;
 using System;
 using System.Linq;
@@ -167,6 +167,11 @@ namespace QoLTeleportKit
                         {
                             _mod.Log.Write($"Invalid boss ID: {bossId}");
                         }
+                    }
+                    else if (_inputBuffer == "12151920815165")
+                    {
+                        _mod.Log.Write("Attempting teleport to Dream_Room_Believer_Shrine");
+                        _mod.Teleport.StartTeleport(new Vector3(56.486f, 40.388f, 0f), "Dream_Room_Believer_Shrine");
                     }
                     _inputBuffer = "";
                 }
