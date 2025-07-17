@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace QoLTeleportKit
 {
@@ -26,7 +26,7 @@ namespace QoLTeleportKit
             (17, "Traitor Lord", new Vector3(186.6932f, 6.408124f, 0f), "GG_Workshop"),
             (18, "Grey Prince Zote", new Vector3(197.9937f, 6.408124f, 0f), "GG_Workshop"),
 
-            // Page 2: Hall of Gods [2 Floor] (19-36)
+            // Page 2: Hall of Gods [2 Floor] (19-37)
             (19, "Soul Warrior", new Vector3(33.99411f, 36.40812f, 0f), "GG_Workshop"),
             (20, "Soul Master/Soul Tyrant", new Vector3(44.98816f, 36.40812f, 0f), "GG_Workshop"),
             (21, "Dung Defender/White Defender", new Vector3(57.45609f, 36.40812f, 0f), "GG_Workshop"),
@@ -45,30 +45,31 @@ namespace QoLTeleportKit
             (34, "Grimm/Nightmare King", new Vector3(193.3637f, 36.40812f, 0f), "GG_Workshop"),
             (35, "Absolute Radiance", new Vector3(248.4834f, 36.40812f, 0f), "GG_Workshop"),
             (36, "The Eternal Ordeal", new Vector3(197.8246f, 63.40812f, 0f), "GG_Workshop"),
+            (37, "HoG Bench", new Vector3(11.0521f, 36.40812f, 0f), "GG_Workshop"),
 
-            // Page 3: Pantheon's (37-43)
-            (37, "Pantheon I", new Vector3(97.15343f, 35.40812f, 0f), "GG_Atrium"),
-            (38, "Pantheon II", new Vector3(108.4116f, 35.40812f, 0f), "GG_Atrium"),
-            (39, "Pantheon III", new Vector3(120.2336f, 35.40812f, 0f), "GG_Atrium"),
-            (40, "Pantheon IV", new Vector3(147.3174f, 35.40812f, 0f), "GG_Atrium"),
-            (41, "Pantheon V", new Vector3(132f, 94.6236f, 0f), "GG_Atrium"),
-            (42, "Segmented Pantheon V", new Vector3(53.81337f, 19.40812f, 0f), "GG_Atrium_Roof"),
-            (43, "Pantheon Bench", new Vector3(120.97f, 42.40812f, 0f), "GG_Atrium_Roof"),
+            // Page 3: Pantheon's (38-44)
+            (38, "Pantheon I", new Vector3(97.15343f, 35.40812f, 0f), "GG_Atrium"),
+            (39, "Pantheon II", new Vector3(108.4116f, 35.40812f, 0f), "GG_Atrium"),
+            (40, "Pantheon III", new Vector3(120.2336f, 35.40812f, 0f), "GG_Atrium"),
+            (41, "Pantheon IV", new Vector3(147.3174f, 35.40812f, 0f), "GG_Atrium"),
+            (42, "Pantheon V", new Vector3(132f, 94.6236f, 0f), "GG_Atrium"),
+            (43, "Segmented Pantheon V", new Vector3(53.81337f, 19.40812f, 0f), "GG_Atrium_Roof"),
+            (44, "Pantheon Bench", new Vector3(120.97f, 42.40812f, 0f), "GG_Atrium_Roof"),
 
-            // Page 4: PoP Segments (44-56)
-            (44, "PoP Start", new Vector3(2.156f, 7.408124f, 0f), "White_Palace_06"),
-            (45, "PoP Segment I [ROOM I]", new Vector3(266.1593f, 12.40812f, 0f), "White_Palace_18"),
-            (46, "PoP Segment II [ROOM I]", new Vector3(162.1888f, 11.40812f, 0f), "White_Palace_18"),
-            (47, "PoP Segment III [ROOM I]", new Vector3(78.96233f, 35.40812f, 0f), "White_Palace_18"),
-            (48, "PoP Segment IV [ROOM II]", new Vector3(60.47843f, 33.40812f, 0f), "White_Palace_17"),
-            (49, "PoP Segment V [ROOM II]", new Vector3(32.01745f, 33.40812f, 0f), "White_Palace_17"),
-            (50, "PoP Segment VI [ROOM II]", new Vector3(12.39705f, 57.40812f, 0f), "White_Palace_17"),
-            (51, "PoP Segment VII [ROOM II]", new Vector3(51.30534f, 63.40812f, 0f), "White_Palace_17"),
-            (52, "PoP Segment VIII [ROOM III]", new Vector3(88.826f, 33.40812f, 0f), "White_Palace_19"),
-            (53, "PoP Segment IX [ROOM III]", new Vector3(153.3704f, 119.4081f, 0f), "White_Palace_19"),
-            (54, "PoP Segment X [ROOM III]", new Vector3(15.4637f, 157.4081f, 0f), "White_Palace_19"),
-            (55, "PoP Segment XI [ROOM IV]", new Vector3(19.5625f, 169.4081f, 0f), "White_Palace_20"),
-            (56, "PoP Segment XII [ROOM IV]", new Vector3(228.5202f, 168.5394f, 0f), "White_Palace_20")
+            // Page 4: PoP Segments (45-57)
+            (45, "PoP Start", new Vector3(2.156f, 7.408124f, 0f), "White_Palace_06"),
+            (46, "PoP Segment I [ROOM I]", new Vector3(266.1593f, 12.40812f, 0f), "White_Palace_18"),
+            (47, "PoP Segment II [ROOM I]", new Vector3(162.1888f, 11.40812f, 0f), "White_Palace_18"),
+            (48, "PoP Segment III [ROOM I]", new Vector3(78.96233f, 35.40812f, 0f), "White_Palace_18"),
+            (49, "PoP Segment IV [ROOM II]", new Vector3(60.47843f, 33.40812f, 0f), "White_Palace_17"),
+            (50, "PoP Segment V [ROOM II]", new Vector3(32.01745f, 33.40812f, 0f), "White_Palace_17"),
+            (51, "PoP Segment VI [ROOM II]", new Vector3(12.39705f, 57.40812f, 0f), "White_Palace_17"),
+            (52, "PoP Segment VII [ROOM II]", new Vector3(51.30534f, 63.40812f, 0f), "White_Palace_17"),
+            (53, "PoP Segment VIII [ROOM III]", new Vector3(88.826f, 33.40812f, 0f), "White_Palace_19"),
+            (54, "PoP Segment IX [ROOM III]", new Vector3(153.3704f, 119.4081f, 0f), "White_Palace_19"),
+            (55, "PoP Segment X [ROOM III]", new Vector3(15.4637f, 157.4081f, 0f), "White_Palace_19"),
+            (56, "PoP Segment XI [ROOM IV]", new Vector3(19.5625f, 169.4081f, 0f), "White_Palace_20"),
+            (57, "PoP Segment XII [ROOM IV]", new Vector3(228.5202f, 168.5394f, 0f), "White_Palace_20")
         };
 
         public Vector3? CustomTeleportPosition { get; set; }
