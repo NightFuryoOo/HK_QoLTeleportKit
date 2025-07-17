@@ -1,4 +1,4 @@
-﻿using Modding;
+using Modding;
 using UnityEngine;
 
 namespace QoLTeleportKit
