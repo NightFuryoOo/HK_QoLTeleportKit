@@ -1,4 +1,4 @@
-﻿using HutongGames.PlayMaker;
+using HutongGames.PlayMaker;
 using Modding;
 using System.Collections;
 using UnityEngine;
@@ -25,7 +25,7 @@ namespace QoLTeleportKit
             _isBusy = true;
             _mod.Input.ShowMenu = false;
             _mod.Log.Write($"Starting teleport to {position} in {scene}");
-            GameManager.instance.StartCoroutine(TeleportToBoss(position, scene)); 
+            GameManager.instance.StartCoroutine(TeleportToBoss(position, scene));
         }
 
         private IEnumerator TeleportToBoss(Vector3 targetPos, string scene)
@@ -47,6 +47,7 @@ namespace QoLTeleportKit
             }
 
             bool isSameScene = GameManager.instance.sceneName == scene;
+            bool isDreamRoom = scene == "Dream_Room_Believer_Shrine";
             bool isPOP45 = scene == "White_Palace_18" && targetPos == new Vector3(266.1593f, 12.40812f, 0f);
             bool isPOP46 = scene == "White_Palace_18" && targetPos == new Vector3(162.1888f, 11.40812f, 0f);
             bool isPOP47 = scene == "White_Palace_18" && targetPos == new Vector3(78.96233f, 35.40812f, 0f);
@@ -67,133 +68,6 @@ namespace QoLTeleportKit
             bool isSegmentedPantheonV = (scene == "GG_Atrium_Roof") && targetPos == new Vector3(53.81337f, 19.40812f, 0f);
             bool isPantheonBench = (scene == "GG_Atrium_Roof") && targetPos == new Vector3(120.97f, 42.40812f, 0f);
 
-            if (isSegmentedPantheonV || isPantheonBench)
-            {
-                if (GameManager.instance.sceneName == "GG_Atrium_Roof")
-                {
-                    HeroController.instance.transform.position = targetPos;
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    _isBusy = false;
-                    _mod.Log.Write("Direct teleport within GG_Atrium_Roof completed");
-                    yield break;
-                }
-                else
-                {
-                    HeroController.instance.StopAnimationControl();
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    HeroController.instance.RegainControl();
-
-                    string targetScene = "GG_Workshop";
-                    Vector3 entryPos = new Vector3(-0.4938369f, 6.408124f, 0f);
-
-                    _mod.Log.Write($"Loading intermediate scene: {targetScene}");
-                    var loadInfo = new GameManager.SceneLoadInfo
-                    {
-                        SceneName = targetScene,
-                        EntryGateName = "left1",
-                        EntryDelay = 0f,
-                        WaitForSceneTransitionCameraFade = false,
-                        Visualization = GameManager.SceneLoadVisualizations.Default,
-                        PreventCameraFadeOut = false
-                    };
-
-                    GameManager.instance.BeginSceneTransition(loadInfo);
-                    yield return new WaitWhile(() => GameManager.instance.IsInSceneTransition);
-
-                    HeroController.instance.transform.position = entryPos;
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-                    yield return new WaitForSeconds(2.5f);
-
-                    Vector3 atriumPos = new Vector3(132f, 94.6236f, 0f);
-                    HeroController.instance.transform.position = atriumPos;
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-                    GameManager.instance.sceneName = "GG_Atrium";
-                    if (GameManager.instance.cameraCtrl != null)
-                    {
-                        GameManager.instance.cameraCtrl.FadeSceneIn();
-                    }
-
-                    yield return new WaitForSeconds(2.5f);
-
-                    HeroController.instance.transform.position = targetPos;
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    GameManager.instance.sceneName = "GG_Atrium_Roof";
-                    if (GameManager.instance.cameraCtrl != null)
-                    {
-                        GameManager.instance.cameraCtrl.FadeSceneIn();
-                    }
-
-                    _isBusy = false;
-                    _mod.Log.Write("Complex teleport to GG_Atrium_Roof completed");
-                    yield break;
-                }
-            }
-
-            if (isPantheonV)
-            {
-                if (GameManager.instance.sceneName == "GG_Atrium_Roof")
-                {
-                    HeroController.instance.transform.position = new Vector3(96.37254f, 73.40811f, 0f);
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    _isBusy = false;
-                    _mod.Log.Write("Pantheon V teleport completed (from roof)");
-                    yield break;
-                }
-                else
-                {
-                    HeroController.instance.StopAnimationControl();
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    HeroController.instance.RegainControl();
-
-                    string targetScene = "GG_Workshop";
-                    Vector3 entryPos = new Vector3(-0.4938369f, 6.408124f, 0f);
-
-                    _mod.Log.Write($"Loading intermediate scene: {targetScene}");
-                    var loadInfo = new GameManager.SceneLoadInfo
-                    {
-                        SceneName = targetScene,
-                        EntryGateName = "left1",
-                        EntryDelay = 0f,
-                        WaitForSceneTransitionCameraFade = false,
-                        Visualization = GameManager.SceneLoadVisualizations.Default,
-                        PreventCameraFadeOut = false
-                    };
-
-                    GameManager.instance.BeginSceneTransition(loadInfo);
-                    yield return new WaitWhile(() => GameManager.instance.IsInSceneTransition);
-
-                    HeroController.instance.transform.position = entryPos;
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-                    yield return new WaitForSeconds(2.5f);
-
-                    HeroController.instance.transform.position = targetPos;
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-                    GameManager.instance.sceneName = "GG_Atrium";
-                    if (GameManager.instance.cameraCtrl != null)
-                    {
-                        GameManager.instance.cameraCtrl.FadeSceneIn();
-                    }
-
-                    yield return new WaitForSeconds(3f);
-
-                    HeroController.instance.transform.position = new Vector3(96.37254f, 73.40811f, 0f);
-                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    GameManager.instance.sceneName = "GG_Atrium_Roof";
-                    if (GameManager.instance.cameraCtrl != null)
-                    {
-                        GameManager.instance.cameraCtrl.FadeSceneIn();
-                    }
-
-                    _isBusy = false;
-                    _mod.Log.Write("Pantheon V complex teleport completed");
-                    yield break;
-                }
-            }
-
             if (!isSameScene)
             {
                 HeroController.instance.StopAnimationControl();
@@ -203,7 +77,12 @@ namespace QoLTeleportKit
                 string targetScene = scene;
                 Vector3 entryPos = targetPos;
 
-                if (isPOP48 || isPOP49 || isPOP50 || isPOP51)
+                if (isDreamRoom)
+                {
+                    targetScene = "Dream_Room_Believer_Shrine";
+                    entryPos = targetPos;
+                }
+                else if (isPOP48 || isPOP49 || isPOP50 || isPOP51)
                 {
                     if (GameManager.instance.sceneName != "White_Palace_17")
                     {
@@ -251,13 +130,13 @@ namespace QoLTeleportKit
                     EntryDelay = 0f,
                     WaitForSceneTransitionCameraFade = false,
                     Visualization = GameManager.SceneLoadVisualizations.Default,
-                    PreventCameraFadeOut = targetScene.StartsWith("White_Palace")
+                    PreventCameraFadeOut = targetScene.StartsWith("White_Palace") || isDreamRoom
                 };
 
                 GameManager.instance.BeginSceneTransition(loadInfo);
                 yield return new WaitWhile(() => GameManager.instance.IsInSceneTransition);
 
-                if (targetScene.StartsWith("White_Palace"))
+                if (targetScene.StartsWith("White_Palace") || isDreamRoom)
                 {
                     yield return new WaitForSeconds(0.2f);
                     if (GameManager.instance.cameraCtrl != null)
@@ -269,7 +148,13 @@ namespace QoLTeleportKit
                 HeroController.instance.transform.position = entryPos;
                 HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-                if (isPantheonI || isPantheonII || isPantheonIII || isPantheonIV)
+                if (isDreamRoom)
+                {
+                    yield return new WaitForSeconds(0.5f);
+                    HeroController.instance.transform.position = targetPos;
+                    HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                }
+                else if (isPantheonI || isPantheonII || isPantheonIII || isPantheonIV)
                 {
                     yield return new WaitForSeconds(2.5f);
 
@@ -316,7 +201,7 @@ namespace QoLTeleportKit
                 HeroController.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
 
-            if (!isSameScene && scene.StartsWith("White_Palace"))
+            if (!isSameScene && (scene.StartsWith("White_Palace") || isDreamRoom))
             {
                 yield return new WaitForEndOfFrame();
                 if (GameManager.instance.cameraCtrl != null)
